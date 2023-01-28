@@ -111,7 +111,7 @@ spec:
 {{ end }}
   rules:
 {{ if .Values.spec.ingress.host }}
-    - host: 2048.{{ .Values.spec.ingress.host }}
+    - host: {{ .Values.spec.ingress.host }}
 {{ else }}
     - host: 
 {{ end }}
