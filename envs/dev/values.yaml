@@ -14,4 +14,4 @@ spec:
   karpenterInstanceProfile:
   ingress:
     type: 'alb' # nginx | alb
-    host: game.mehdiber.people.aws.dev # empty or your domain like dev.example.com
+    host:  # empty or your domain like dev.example.com

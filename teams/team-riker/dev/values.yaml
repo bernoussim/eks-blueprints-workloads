@@ -4,5 +4,5 @@ labels:
 spec:
   env:
   ingress:
-    host: 
+    host: game.mehdiber.people.aws.dev
     type: alb
