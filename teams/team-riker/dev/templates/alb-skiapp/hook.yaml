@@ -4,7 +4,7 @@ metadata:
   name: hook
   namespace: team-riker
   annotations:
-    "helm.sh/hook": post-install, post-upgrade
+    helm.sh/hook: post-install, post-upgrade
 spec:
   template:
     metadata:
@@ -15,4 +15,4 @@ spec:
       containers:
       - name: add-labels
         image: bitnami/kubectl
-        command: ["sh", "-c", "kubectl label -l env=dev test=test"]
+        command: ["sh", "-c", "kubectl -n team-riker label deployment --all test-local-git=test-local-git"]
