@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: hook
+  annotations:
+    "helm.sh/hook": post-install, post-upgrade
+spec:
+  template:
+    metadata:
+      labels:
+        app: "my-app"
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: add-labels
+        image: bitnami/kubectl
+        command: ["sh", "-c", "kubectl label -l env=dev test=test"]
